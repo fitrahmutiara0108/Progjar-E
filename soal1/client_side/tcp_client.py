@@ -75,11 +75,12 @@ def send_command(command_str,is_secure=False):
         # at this point, data_received (string) will contain all data coming from the socket
         # to be able to use the data_received as a dict, need to load it using json.loads()
         hasil = deserialize(data_received)
-        logging.warning("data received from server: ")
+        logging.warning("data received from server:")
         return hasil
     except Exception as ee:
         logging.warning(f"error during data receiving {str(ee)}")
         return False
+
 
 def getdatapemain(nomor=0,is_secure=False):
     cmd=f"getdatapemain {nomor}\r\n\r\n"
@@ -90,7 +91,7 @@ def lihatversi(is_secure=False):
     cmd=f"versi \r\n\r\n"
     hasil = send_command(cmd,is_secure=is_secure)
     return hasil
-
+    
 #mengikuti contoh pada progjar 3
 #untuk menghitung latency 
 def ambil_data(numbersofrequests):

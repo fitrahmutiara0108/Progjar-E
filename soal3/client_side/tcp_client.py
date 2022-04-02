@@ -74,7 +74,7 @@ def send_command(command_str,is_secure=True):
                 break
         # at this point, data_received (string) will contain all data coming from the socket
         # to be able to use the data_received as a dict, need to load it using json.loads()
-        hasil = deserialisasi(data_received)
+        hasil = deserialize(data_received)
         logging.warning("data received from server:")
         return hasil
     except Exception as ee:
@@ -112,4 +112,4 @@ def ambil_data(numbersofrequests):
     print(f"Latency: {selesai}")
 
 if __name__=='__main__':
-    ambil_data(50)
+    ambil_data(1)
